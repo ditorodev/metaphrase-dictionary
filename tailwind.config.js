@@ -1,12 +1,28 @@
+const theme = require("tailwindcss/defaultTheme")
+const colors = require("tailwindcss/colors")
+
 module.exports = {
-    purge: [],
-    purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-        extend: {},
+  purge: [
+    './pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'
+  ],
+  presets: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    ...theme,
+    colors:{
+      ...colors,
+      linkaccent: colors.blue[300],
+      maintext: colors.gray[200],
+      secondarytext: colors.gray[400],
     },
-    variants: {
-        extend: {},
-    },
-    plugins: [],
+    fontFamily: {
+      sans: ['Work Sans', 'sans-serif'],
+      serif: ['DM Serif Text', 'serif'],
+    }
+  },
+  variants: {
+    textColor: ['hover'],
+    textDecoration: ['hover'],
+  },
+  plugins: [],
 }
